@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --glass-bg: rgba(17, 25, 40, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.125);
+}
+
+body {
+  @apply bg-[#0f172a] text-white min-h-screen;
+  background-image: radial-gradient(at 40% 20%, rgba(61, 65, 157, 0.25) 0px, transparent 50%),
+                    radial-gradient(at 80% 0%, rgba(91, 37, 178, 0.25) 0px, transparent 50%),
+                    radial-gradient(at 0% 50%, rgba(31, 54, 156, 0.25) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.glass {
+  @apply backdrop-blur-lg;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-hover {
+  @apply transition-all duration-300;
+}
+
+.glass-hover:hover {
+  background: rgba(17, 25, 40, 0.85);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.3s ease-out;
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
